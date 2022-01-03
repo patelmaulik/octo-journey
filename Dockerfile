@@ -38,7 +38,11 @@ RUN cp -r /build/main .
 # RUN cp -r /build/healthcheck .
 
 # Build a small image
-FROM scratch
+#FROM scratch
+
+FROM ubuntu:latest
+RUN apt-get update -y
+
 #FROM golang:1.14-alpine AS runtime
 #RUN apk update && apk add bash
 
