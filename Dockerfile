@@ -44,7 +44,7 @@ FROM scratch
 
 COPY --from=builder /dist/main /
 # COPY --from=builder /dist/healthcheck /
-RUN apk add ca-certificates
+#RUN apk add ca-certificates
 
 # health check probe
 # HEALTHCHECK \
