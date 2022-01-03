@@ -38,13 +38,13 @@ RUN cp -r /build/main .
 # RUN cp -r /build/healthcheck .
 
 # Build a small image
-#FROM scratch
-FROM golang:1.16-alpine AS runtime
-RUN apk update && apk add bash
+FROM scratch
+# FROM golang:1.16-alpine AS runtime
+# RUN apk update && apk add bash
 
 COPY --from=builder /dist/main /
 # COPY --from=builder /dist/healthcheck /
-RUN apk add ca-certificates
+# RUN apk add ca-certificates
 
 # health check probe
 # HEALTHCHECK \
