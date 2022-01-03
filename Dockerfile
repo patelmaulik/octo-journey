@@ -39,16 +39,12 @@ RUN cp -r /build/main .
 
 # Build a small image
 #FROM scratch
-
-FROM ubuntu:latest
-RUN apt-get update -y
-
-#FROM golang:1.14-alpine AS runtime
-#RUN apk update && apk add bash
+FROM golang:1.16-alpine AS runtime
+RUN apk update && apk add bash
 
 COPY --from=builder /dist/main /
 # COPY --from=builder /dist/healthcheck /
-#RUN apk add ca-certificates
+RUN apk add ca-certificates
 
 # health check probe
 # HEALTHCHECK \
