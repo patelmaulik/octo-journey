@@ -1,1 +1,3 @@
 ./mockgen -source=dbclient/database-client.go -destination=mocks/database-client.go -package=dbclient
+
+phony change
